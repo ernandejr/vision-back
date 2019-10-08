@@ -5,7 +5,7 @@
 - Configure your `.env` file for authenticating via database
 - import the SQL that is in: public/dump.sql
 
-## A Live PoC
+## A Live
 
 - Run a PHP built in server from your root project:
 
