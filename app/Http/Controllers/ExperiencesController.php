@@ -18,6 +18,15 @@ class ExperiencesController extends Controller
         $this->model = $experience;
     }
 
+    /**
+     * Retornar todas Experiências
+     *
+     * @group Experiências
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     */
     public function getAll()
     {
         try {
@@ -33,6 +42,15 @@ class ExperiencesController extends Controller
         
     }
 
+    /**
+     * Retornar uma Experiência específica
+     *
+     * @group Experiências
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     */
     public function get($id)
     {
         try {
@@ -44,6 +62,21 @@ class ExperiencesController extends Controller
         
     }
 
+    /**
+     * Criar uma nova Experiência
+     *
+     * @group Experiências
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     *@response 201 {
+     *"name": "Front End Developer @ HillSong",
+     *"date_start": "2014-01-01",
+     *"date_end": null,
+     *"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley."
+     *}
+     */
     public function store(Request $request)
     {
         try {
@@ -54,6 +87,21 @@ class ExperiencesController extends Controller
         }
     }
 
+    /**
+     * Atualizar uma Experiência
+     *
+     * @group Experiências
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     *@response 201 {
+     *"name": "Front End Developer @ HillSong",
+     *"date_start": "2014-01-01",
+     *"date_end": null,
+     *"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley."
+     *}
+     */
     public function update($id, Request $request)
     {
         try {
@@ -65,6 +113,12 @@ class ExperiencesController extends Controller
         }
     }
 
+    /**
+     * Deletar uma Experiência
+     *
+     * @group Experiências
+     *@response 204
+     */
     public function destroy($id, Request $request)
     {
         try {

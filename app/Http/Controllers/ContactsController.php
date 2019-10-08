@@ -16,7 +16,15 @@ class ContactsController extends Controller
     {
         $this->model = $contact;
     }
-
+    /**
+     * Retornar todos contatos
+     *
+     * @group Contatos
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     */
     public function getAll()
     {
         try {
@@ -32,6 +40,15 @@ class ContactsController extends Controller
         
     }
 
+    /**
+     * Retornar um contato expecifico
+     *
+     * @group Contatos
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     */
     public function get($id)
     {
         try {
@@ -43,6 +60,22 @@ class ContactsController extends Controller
         
     }
 
+    /**
+     * Criar um novo contato
+     *
+     * @group Contatos
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     *@response 201 {
+     *   "tel": "123-456-7890",
+     *   "cel": "012-345-6789",
+     *   "address": "1490 General Woods. Colorado Springs",
+     *   "website": "brianwalker.co",
+     *   "mail": "mail@brianwalker.co"
+     *}
+     */
     public function store(Request $request)
     {
         try {
@@ -53,6 +86,22 @@ class ContactsController extends Controller
         }
     }
 
+    /**
+     * Atualizar um contato
+     *
+     * @group Contatos
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     *@response 200 {
+     *   "tel": "123-456-7890",
+     *   "cel": "012-345-6789",
+     *   "address": "1490 General Woods. Colorado Springs",
+     *   "website": "brianwalker.co",
+     *   "mail": "mail@brianwalker.co"
+     *}
+     */
     public function update($id, Request $request)
     {
         try {
@@ -64,6 +113,12 @@ class ContactsController extends Controller
         }
     }
 
+    /**
+     * Deletar um contato
+     *
+     * @group Contatos
+     *@response 204
+     */
     public function destroy($id, Request $request)
     {
         try {

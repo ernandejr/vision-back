@@ -17,6 +17,15 @@ class EducationsController extends Controller
         $this->model = $education;
     }
 
+    /**
+     * Retornar todas Educaçãos
+     *
+     * @group Educaçãos
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     */
     public function getAll()
     {
         try {
@@ -32,6 +41,15 @@ class EducationsController extends Controller
         
     }
 
+    /**
+     * Retornar uma Educação específica
+     *
+     * @group Educaçãos
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     */
     public function get($id)
     {
         try {
@@ -43,6 +61,21 @@ class EducationsController extends Controller
         
     }
 
+    /**
+     * Criar uma nova Educação
+     *
+     * @group Educaçãos
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     *@response 201 {
+     *"name": "Web Developer @ Harvard University",
+     *"date_start": "2006-08-01",
+     *"date_end": "2010-05-01",
+     *"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the  1500s, when an unknown printer took a galley."
+     *}
+     */
     public function store(Request $request)
     {
         try {
@@ -53,6 +86,21 @@ class EducationsController extends Controller
         }
     }
 
+    /**
+     * Atualizar uma Educação
+     *
+     * @group Educaçãos
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     *@response 201 {
+     *"name": "Web Developer @ Harvard University",
+     *"date_start": "2006-08-01",
+     *"date_end": "2010-05-01",
+     *"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the  1500s, when an unknown printer took a galley."
+     *}
+     */
     public function update($id, Request $request)
     {
         try {
@@ -64,6 +112,12 @@ class EducationsController extends Controller
         }
     }
 
+    /**
+     * Deletar uma Educação
+     *
+     * @group Educaçãos
+     *@response 204
+     */
     public function destroy($id, Request $request)
     {
         try {

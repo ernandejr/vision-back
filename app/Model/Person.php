@@ -18,9 +18,9 @@ class Person extends Model
     protected $hidden = [
         'id'
     ];
-    public function contacts()
+    public function contact()
     {
-        return $this->hasMany(Contact::class);
+        return $this->hasOne(Contact::class);
     }
 
     public function skills()
@@ -28,12 +28,12 @@ class Person extends Model
         return $this->hasMany(Skill::class);
     }
 
-    public function educations()
+    public function education()
     {
         return $this->hasMany(Education::class);
     }
 
-    public function experiences()
+    public function experience()
     {
         return $this->hasMany(Experience::class);
     }

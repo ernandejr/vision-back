@@ -16,7 +16,15 @@ class SkillsController extends Controller
     {
         $this->model = $skill;
     }
-
+    /**
+     * Retornar todas Habilidades
+     *
+     * @group Habilidades
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     */
     public function getAll()
     {
         try {
@@ -32,6 +40,15 @@ class SkillsController extends Controller
         
     }
 
+    /**
+     * Retornar uma Habilidade específica
+     *
+     * @group Habilidades
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     */
     public function get($id)
     {
         try {
@@ -43,6 +60,19 @@ class SkillsController extends Controller
         
     }
 
+    /**
+     * Criar uma nova Habilidade
+     *
+     * @group Habilidades
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     *@response 201 {
+     *"name": "Front End",
+     *"value": "80%"
+     *}
+     */
     public function store(Request $request)
     {
         try {
@@ -53,6 +83,19 @@ class SkillsController extends Controller
         }
     }
 
+    /**
+     * Atualizar uma Habilidade
+     *
+     * @group Habilidades
+     *
+     *@response 500 {
+     * "error": "erro ao se conectar com o banco de dados"
+     *}
+     *@response 200 {
+     *"name": "Front End",
+     *"value": "80%"
+     *}
+     */
     public function update($id, Request $request)
     {
         try {
@@ -64,6 +107,12 @@ class SkillsController extends Controller
         }
     }
 
+    /**
+     * Deletar uma Habilidade
+     *
+     * @group Habilidades
+     *@response 204
+     */
     public function destroy($id, Request $request)
     {
         try {
