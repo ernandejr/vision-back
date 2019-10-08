@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
-class Experiencec extends Model
+class Experience extends Model
 {
     protected $table = 'experiences';
     protected $fillable = [
@@ -11,7 +11,13 @@ class Experiencec extends Model
         'description',
     ];
     protected $casts = [
-        'date' => 'Timestamp'
+        'date' => 'string'
+    ];
+
+
+    protected $hidden = [
+        'id',
+        'person_id'
     ];
     public $timestamps = false;
 }

@@ -14,5 +14,9 @@ class Contact extends Model
     protected $casts = [
         'date' => 'Timestamp'
     ];
+    protected $hidden = [
+        'id',
+        'person_id'
+    ];
     public $timestamps = false;
 }

@@ -11,7 +11,11 @@ class Education extends Model
         'description',
     ];
     protected $casts = [
-        'date' => 'Timestamp'
+        'date' => 'string'
+    ];
+    protected $hidden = [
+        'id',
+        'person_id'
     ];
     public $timestamps = false;
 }

@@ -14,4 +14,27 @@ class Person extends Model
         'date' => 'Timestamp'
     ];
     public $timestamps = false;
+
+    protected $hidden = [
+        'id'
+    ];
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
+
+    public function skills()
+    {
+        return $this->hasMany(Skill::class);
+    }
+
+    public function educations()
+    {
+        return $this->hasMany(Education::class);
+    }
+
+    public function experiences()
+    {
+        return $this->hasMany(Experience::class);
+    }
 }
